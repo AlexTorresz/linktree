@@ -1,0 +1,35 @@
+/* ===== Ajustes personalizados (o restante do visual usa Tailwind no HTML) ===== */
+
+/* Fundo escuro com gradiente */
+.bg-page {
+  background: linear-gradient(145deg, #0b1020 0%, #151a3d 55%, #1d1442 100%);
+  background-attachment: fixed;
+}
+
+/* Brilho suave pulsando no fundo (uma única animação discreta) */
+.blob {
+  animation: pulse-glow 8s ease-in-out infinite;
+}
+@keyframes pulse-glow {
+  50% { opacity: .55; transform: scale(1.12); }
+}
+
+/* Anel sutil ao redor do avatar */
+.avatar {
+  box-shadow: 0 0 0 8px rgba(99, 102, 241, .12), 0 20px 40px rgba(30, 27, 75, .6);
+}
+
+/* Foco visível para navegação por teclado */
+.link-card:focus-visible {
+  outline: 3px solid #22d3ee;
+  outline-offset: 3px;
+}
+
+/* Evita rolagem horizontal em telas muito pequenas */
+html, body { overflow-x: hidden; }
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .blob { animation: none; }
+  .link-card { transition: none; }
+}
